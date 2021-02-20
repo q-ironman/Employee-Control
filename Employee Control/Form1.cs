@@ -13,6 +13,7 @@ namespace Employee_Control
     public partial class Form1 : Form
     {
         public DataTable myData = new DataTable();
+        List<Employee> myEmployees = new List<Employee>();
         public Form1()
         {
             InitializeComponent();
@@ -33,15 +34,21 @@ namespace Employee_Control
             myData.Columns.Add("Phone");
             myData.Columns.Add("Adress");
             myData.Columns.Add("Postal Code");
-            Employee sevket = new Employee();
-            sevket.Name = "Şevket";sevket.Surname = "Şahbaz";sevket.BirthDate = "01/01/1990";sevket.StartDate = "05/08/2010";
-            sevket.IsWorking = true;sevket.Reason = "acbf";sevket.MoPhone = "5404560236";sevket.Phone = 4425368;sevket.City = "Ettelbruck Ettelbréck";
-            sevket.Country = "Luxemburg";sevket.PostalCode = 5600;sevket.Adress = "Boulevard de la Fraternité";
+            myEmployees.Add(new Employee() { Name = "Şevket", Surname = "Şahbaz", BirthDate = "01/01/1990", StartDate = "05/08/2010",
+                IsWorking = true,
+                Reason = "acbf",
+                MoPhone = "5404560236",
+                Phone = 4425368,
+                City = "Ettelbruck Ettelbréck",
+                Country = "Luxemburg",
+                PostalCode = 5600,
+                Adress = "Boulevard de la Fraternité"
+            });
             Employee osman = new Employee();
             osman.Name = "Osman"; osman.Surname = "Ceylan"; osman.BirthDate = "02/02/2000"; osman.StartDate = "09/07/2015";
             osman.IsWorking = true; osman.Reason = "klsfskf"; osman.MoPhone = "5605879631"; osman.Phone = 4426897; osman.City = "Afyon";
             osman.Country = "Turkey"; osman.PostalCode = 3600; osman.Adress = "İncili Mahallesi Fatih caddesi";
-            myData.Rows.Add(sevket.EmployeeId,sevket.Name,sevket.Surname,sevket.BirthDate,sevket.StartDate,sevket.EndDate,sevket.Reason,sevket.MoPhone,sevket.Phone,sevket.Adress,sevket.PostalCode);
+            myData.Rows.Add(myEmployees[0].EmployeeId, myEmployees[0].Name, myEmployees[0].Surname, myEmployees[0].BirthDate, myEmployees[0].StartDate, myEmployees[0].EndDate, myEmployees[0].Reason, myEmployees[0].MoPhone, myEmployees[0].Phone, myEmployees[0].Adress, myEmployees[0].PostalCode);
             myData.Rows.Add(osman.EmployeeId, osman.Name, osman.Surname, osman.BirthDate, osman.StartDate, osman.EndDate, osman.Reason, osman.MoPhone, osman.Phone, osman.Adress, osman.PostalCode);
 
             dataGridView_employee.DataSource = myData;

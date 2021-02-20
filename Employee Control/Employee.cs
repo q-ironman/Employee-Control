@@ -34,7 +34,10 @@ namespace Employee_Control
             {
                 if (this._isWorking)
                     this._endDate = "---";
-                this._endDate = value;
+                else
+                {
+                    this._endDate = value;
+                }
             }
         }
         public string MoPhone
