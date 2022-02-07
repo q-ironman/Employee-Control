@@ -12,7 +12,7 @@ namespace Employee_Control
 {
     public partial class Form1 : Form
     {
-        
+            
         EmployeeService frm1Service = EmployeeService.CreateService();
         Form2 myForm2 = new Form2();
         private List<Employee> myEmployees = new List<Employee>();
